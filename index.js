@@ -16,6 +16,10 @@ const updateHotelById= async (hotelId, dataToUpdate) => {
         }
 }
 
+app.get("/hotels", (req,res) => {
+    res.send(Hotel)
+})
+
 app.post("/hotels/:hotelId", async (req, res) => {
     try {
         const update = await updateHotelById(req.params.hotelId, req.body)
