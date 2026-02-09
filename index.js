@@ -16,7 +16,8 @@ const updateHotelById= async (hotelId, dataToUpdate) => {
         }
 }
 
-app.get("/hotels", (req,res) => {
+app.get("/hotels", async(req,res) => {
+    const hotels = await Hotel.find()
     res.send(Hotel)
 })
 
